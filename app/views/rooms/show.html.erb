@@ -1,0 +1,19 @@
+<% provide(:title, @room.name) %>
+<div class="row-fluid">
+<h2><%= @room.name %> </h2>
+</div>
+
+<div class="row-fluid">
+     <section>
+        <%= render 'shared/message_form' %>
+      </section>
+
+
+    <% if @room.messages.any? %>
+       <ol class="messages">
+        <%= render @messages %>
+      </ol>
+     
+    <% end %>
+  </div>
+ </div>

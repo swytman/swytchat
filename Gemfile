@@ -2,16 +2,25 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+#gem 'railties', '4.0.0'
+gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem 'protected_attributes'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
 end
+
+group :development do
+  gem 'annotate', '2.5.0'
+end
+
+
 
 # Use SCSS for stylesheets
 
@@ -44,7 +53,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.15.1'
 end
 
 # Use ActiveModel has_secure_password

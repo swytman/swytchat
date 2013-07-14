@@ -1,4 +1,21 @@
 Swytchat::Application.routes.draw do
+  
+root to: 'static#home'
+match '/rooms',    to: 'rooms#index', via: :get
+match '/users',    to: 'users#index', via: :get
+  
+  resources :messages
+  resource :rooms
+  resource :users
+  resources :sessions, only: [:new, :create, :destroy]
+
+
+  match '/rooms/:id', :to => 'rooms#show', :as => :room, via: :get
+  match '/about',   to: 'static#about', via: :get
+  match '/contact', to: 'static#contact', via: :get
+  match '/signin',  to: 'sessions#new', via: :get
+  match '/signout', to: 'sessions#destroy', via: :delete
+  match '/signup',  to: 'users#new', via: :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,15 @@
+<% provide(:title, 'Комнаты') %>
+<h1>Комнаты</h1>
+
+<%= will_paginate %>
+
+<ul class="rooms">
+  <% @rooms.each do |room| %>
+    <li>
+  <%= link_to room.name, room %>
+   
+</li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

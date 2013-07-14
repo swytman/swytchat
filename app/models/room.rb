@@ -1,0 +1,58 @@
+# == Schema Information
+#
+# Table name: rooms
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  password_digest :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  no_pass         :boolean          default(FALSE)
+#  salt            :string(255)
+#
+
+class Room < ActiveRecord::Base
+
+  attr_accessible :name, :password, :password_confirmation
+
+  has_secure_password :validations => false
+
+has_many :messages
+
+  validates :password, presence: true, confirmation: true, :if => :setting_password?
+  validates :password_confirmation, presence: true        , :if => :setting_password?
+
+  validates :name, length: { maximum: 50 }, presence: true,
+					uniqueness: {case_sensitive: false}
+ 
+
+
+##def authenticate(password)
+ ##   password.present? && password_digest.present? && password_digest == BCrypt::Engine.hash_secret(password, password_salt)
+##end
+
+def no_pass?
+     if password=""
+     	no_pass=true
+     end
+  end
+
+##private
+
+def setting_password?
+    password.present? || password_confirmation.present?
+end
+
+##    @password
+ # end
+
+#def password= (password_str)
+
+ #   @password = password_str
+  #  self.salt   = BCrypt::Engine.generate_salt
+   # self.password_digest = BCrypt::Engine.hash_secret(password_str, salt)
+ #end   
+
+
+
+end
