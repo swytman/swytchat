@@ -1,4 +1,12 @@
 <% provide(:title, @room.name) %>
+
+ <script>
+ var last_message_id = 0;
+ $(document).ready(
+ get_messages()
+ );
+</script>
+
 <div class="row-fluid">
 <h2><%= @room.name %> </h2>
 </div>
@@ -8,12 +16,11 @@
         <%= render 'shared/message_form' %>
       </section>
 
-
-    <% if @room.messages.any? %>
-       <ol class="messages">
-        <%= render @messages %>
-      </ol>
-     
-    <% end %>
-  </div>
+ <ol class="messages">
+  <!--  <% if @room.messages.any? %>
+       <%= render @messages %>
+     -->
+     <% end %>
+  </ol>
  </div>
+</div>

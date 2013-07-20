@@ -4,13 +4,16 @@ root to: 'static#home'
 match '/rooms',    to: 'rooms#index', via: :get
 match '/users',    to: 'users#index', via: :get
   
-  resources :messages
-  resource :rooms
-  resource :users
+  resources :messages, only: [:create]
+    resources :rooms do
+             get 'sendnew', :on => :member
+        end
+resources :rooms
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
-
-  match '/rooms/:id', :to => 'rooms#show', :as => :room, via: :get
+#match '/messages/getnew', to: 'messages#sendnew', via: :get
+  
   match '/about',   to: 'static#about', via: :get
   match '/contact', to: 'static#contact', via: :get
   match '/signin',  to: 'sessions#new', via: :get

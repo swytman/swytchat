@@ -17,11 +17,11 @@ def current_user=(user)
 
   def current_user
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
+  store_user (@current_user)
   end
 
-  def current_user?(user)
-    user == current_user
-  end
+
+  
  def signed_in_user
        store_location
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
@@ -42,8 +42,10 @@ def redirect_back_or(default)
   end
 
   def store_user (user)
+    if user!=nil then
     session[:user_name] = user.name
     session[:user_id] = user.id
+    end
   end
 
 end

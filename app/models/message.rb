@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: messages
+#
+#  id         :integer          not null, primary key
+#  content    :string(255)
+#  user_id    :integer
+#  room_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 class Message < ActiveRecord::Base
 attr_accessible :content
 default_scope order: 'messages.created_at DESC'
