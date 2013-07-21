@@ -25,6 +25,20 @@ textarea {
 
 .lock_icon {vertical-align:top;}
 
+.border15px {
+border-radius: 15px;
+
+}
+
+.new_mes {
+border-left: 4px solid LightGreen;}
+
+#mes-input {
+margin-top: 10px;
+  vertical-align: top;
+
+}
+
 .center {
   text-align: center;
   h1 {
@@ -165,7 +179,7 @@ input {
           overflow-y: scroll;
 
               li {
-                  padding: 5px 0;
+                  padding: 5px 10px;
                  border-top: 1px solid #e8e8e8;
                 }
           }
