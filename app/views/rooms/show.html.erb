@@ -10,7 +10,12 @@
 </script>
 
 <div class="row-fluid">
-<h2><%= @room.name %> </h2>
+
+<h2>
+<% @room.no_pass ? @class = "free" : @class = "pass" %>
+<% @size = '23'%>
+<%= render 'shared/lock_icon' %>
+<%= @room.name %> </h2>
 </div>
 
 <div class="row-fluid">

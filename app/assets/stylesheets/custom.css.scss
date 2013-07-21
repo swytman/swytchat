@@ -6,6 +6,7 @@ $grayMediumLight: #eaeaea;
 
 /* universal */
 
+
 html {
   overflow-y: scroll;
 }
@@ -21,6 +22,8 @@ section {
 textarea {
   resize: vertical;
 }
+
+.lock_icon {vertical-align:top;}
 
 .center {
   text-align: center;
@@ -149,7 +152,7 @@ input {
       &:last-child {
       border-bottom: 1px solid $grayLighter;
       }
-   .lock_icon {vertical-align:top;}
+   
   }
 }
 
