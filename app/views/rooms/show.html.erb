@@ -1,9 +1,11 @@
 <% provide(:title, @room.name) %>
 
  <script>
- var last_message_id = 0;
- $(document).ready(
- get_messages()
+ last_message_id = 0;
+ $(document).ready(function(){
+ get_messages();
+ new_messages_check();
+}
  );
 </script>
 

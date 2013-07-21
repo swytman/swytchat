@@ -1,9 +1,19 @@
 
 
-
+function addMessage(message){
+item = "<li>"
+	item+="<span class='user'>"+message.name+ ": </span>"
+	item+="<span class='content'>"+message.content+ "</span>"
+	item+="<span class='timestamp'>"+message.time+ "</span>"
+    item+="</li>"
+    if (last_message_id < message.id) {
+     last_message_id = message.id }
+     return item;
+}
 
 function new_messages_check(){
-setTimeout("get_messages()",5000);
+	window.setInterval("get_messages()",5000);
+
 }
 
 
@@ -20,23 +30,31 @@ last_message_id: last_message_id
 html=""
 
 $.each(data, function(key, val) {
-	item = "<li>"
-	item+="<span class='user'>"+val.name+ ": </span>"
-	item+="<span class='content'>"+val.content+ "</span>"
-	item+="<span class='timestamp'>"+val.time+ "</span>"
-    item+="</li>"
-    if (last_message_id < val.id) {
-     last_message_id = val.id }
-    
-    html+=item
-    
+    html+=addMessage(val)
 });
 
 $('.messages').prepend(html);
 
-new_messages_check();
+//new_messages_check();
 
 
 });
 }
+
+$(document).ready(function(){
+  $('#new_message')
+    .bind("ajax:success", function(data, status, xhr) {
+       get_messages() ;
+       $('#message_content').focus();
+       $('#message_content').focus();
+      $('#message_content').val('');
+    })
+    .bind("ajax:error", function(xhr, status, error) {
+
+        //add error handler
+
+    });
+})
+
+
 
