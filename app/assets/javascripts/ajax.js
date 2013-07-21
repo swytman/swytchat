@@ -1,7 +1,7 @@
 
 
 function addMessage(message){
-item = "<li>"
+item = "<li class='new_mes'>"
 	item+="<span class='user'>"+message.name+ ": </span>"
 	item+="<span class='content'>"+message.content+ "</span>"
 	item+="<span class='timestamp'>"+message.time+ "</span>"

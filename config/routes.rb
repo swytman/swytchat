@@ -1,6 +1,6 @@
 Swytchat::Application.routes.draw do
   
-root to: 'static#home'
+root to: 'rooms#index'
 match '/rooms',    to: 'rooms#index', via: :get
 match '/users',    to: 'users#index', via: :get
   
