@@ -8,10 +8,14 @@ match '/users',    to: 'users#index', via: :get
     resources :rooms do
              get 'sendnew', :on => :member
         end
-resources :rooms
+    resources :rooms do
+             get 'password_request', :on => :member
+             get 'password_check', :on => :member
+             end    
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-
+  resources :sessions, only: [:new, :create, :destroy]
 #match '/messages/getnew', to: 'messages#sendnew', via: :get
   
   match '/about',   to: 'static#about', via: :get

@@ -5,7 +5,7 @@ def sign_in(user)
    	 cookies.permanent[:remember_token] = user.remember_token
    	 self.current_user = user
    	 store_user user
-  end
+    end
 
 def signed_in?
     !current_user.nil?
@@ -23,7 +23,7 @@ def current_user=(user)
 
   
  def signed_in_user
-       store_location
+      store_location
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
        
     end

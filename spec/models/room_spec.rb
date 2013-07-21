@@ -9,6 +9,7 @@
 #  updated_at      :datetime
 #  no_pass         :boolean          default(FALSE)
 #  salt            :string(255)
+#  remember_token  :string(255)
 #
 
 require 'spec_helper'

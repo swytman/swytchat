@@ -4,7 +4,7 @@
   <%= render 'shared/error_messages', object: f.object %>
    
   <div class="span10">
-    <%= f.text_field :content, placeholder: "Пишите здесь", autofocus: true %>
+    <%= f.text_field :content, placeholder: "Пишите здесь", autofocus: true, autocomplete: :off %>
   
   <%= f.submit "Отправить", class: "btn btn-success"%>
   </div>

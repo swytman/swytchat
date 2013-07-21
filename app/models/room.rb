@@ -9,6 +9,7 @@
 #  updated_at      :datetime
 #  no_pass         :boolean          default(FALSE)
 #  salt            :string(255)
+#  remember_token  :string(255)
 #
 
 class Room < ActiveRecord::Base
@@ -25,33 +26,31 @@ has_many :messages
   validates :name, length: { maximum: 50 }, presence: true,
 					uniqueness: {case_sensitive: false}
  
-
+before_save :create_remember_token
 
 ##def authenticate(password)
  ##   password.present? && password_digest.present? && password_digest == BCrypt::Engine.hash_secret(password, password_salt)
 ##end
 
-def no_pass?
-     if password=""
-     	no_pass=true
-     end
-  end
+#def no_pass?
+ #    if password=""
+  #   	no_pass=true
+  #   end
+  #end
 
-##private
+
+
+private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 
 def setting_password?
     password.present? || password_confirmation.present?
 end
 
-##    @password
- # end
 
-#def password= (password_str)
-
- #   @password = password_str
-  #  self.salt   = BCrypt::Engine.generate_salt
-   # self.password_digest = BCrypt::Engine.hash_secret(password_str, salt)
- #end   
 
 
 

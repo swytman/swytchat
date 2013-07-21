@@ -6,8 +6,11 @@
 <ul class="rooms">
   <% @rooms.each do |room| %>
     <li>
-  <%= link_to room.name, room %>
-   
+  <%= room.no_pass ? @class = "free" : @class = "pass"
+    link_to room.name, {:controller => "rooms", :action =>"show", :id => room.id}, :class => @class%>
+     <% if (@class == "pass") %>
+       <%= image_tag "lock.png", size: "18", alt: "Lock", class: "lock_icon" %>
+     <% end %> 
 </li>
   <% end %>
 </ul>

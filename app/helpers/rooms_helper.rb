@@ -1,13 +1,12 @@
 module RoomsHelper
 
-	def password
-    @password
-  end
+	def save_room_token (room)
+		cookies.permanent["#{room.id}token"]= room.remember_token
+	end
 
-def password=(password_str)
+	def check_room_token (room)
+		@r = Room.find_by_remember_token(cookies["#{room.id}token"])
+		return ( !@r.nil? && @r.id == room.id)
+	end
 
-    @password= password_str
-    self.salt   = BCrypt::Engine.generate_salt
-    self.password_digest = BCrypt::Engine.hash_secret(password_str, salt)
- end
 end
