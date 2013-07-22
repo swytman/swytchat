@@ -24,7 +24,7 @@ item = "<li class='new_mes border15px'>"
 }
 
 function new_messages_check(){
-	window.setInterval("get_messages()",5000);
+	window.setInterval("get_messages()",7000);
 
 }
 
