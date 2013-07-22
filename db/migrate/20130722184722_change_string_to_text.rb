@@ -1,6 +1,6 @@
 class ChangeStringToText < ActiveRecord::Migration
   def up
-    change_column :messages, :content, :text
+    change_column :messages, :content, :text, :limit => nil
 end
 def down
     # This might cause trouble if you have strings longer

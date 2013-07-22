@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20130722184722) do
 
   create_table "messages", force: true do |t|
-    t.text     "content",    limit: 255
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "room_id"
     t.datetime "created_at"
