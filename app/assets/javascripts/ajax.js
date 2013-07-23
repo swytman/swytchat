@@ -1,16 +1,4 @@
 
-jQuery(function($) {
-2   // create a convenient toggleLoading function
-3   //var toggleLoading = function() { $("#loading").toggle() };
-4  
-5   //$("#tool-form")
-6     //.bind("ajax:beforeSend",  toggleLoading)
-7     //.bind("ajax:complete", toggleLoading)
-8     //.bind("ajax:success", function(data, status, xhr) {
-9      // $("#response").html(status);
-10      //});
-11  });
-
 
 function addMessage(message){
 item = "<li class='new_mes border15px'>"
@@ -58,8 +46,7 @@ $(document).ready(function(){
     .bind("ajax:success", function(data, status, xhr) {
        get_messages() ;
        $('#message_content').focus();
-       $('#message_content').focus();
-      $('#message_content').val('');
+       $('#message_content').val('');
     })
     .bind("ajax:error", function(xhr, status, error) {
 

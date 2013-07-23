@@ -25,15 +25,12 @@ textarea {
 
 .lock_icon {vertical-align:top;}
 
-.border15px {
-border-radius: 15px;
 
-}
 
 .new_mes {
-border-left: 4px solid LightGreen;}
+border-left: 4px solid LightGreen !important;}
 
-#mes-input {
+.mes-input {
   vertical-align: middle;
 
 }
@@ -180,6 +177,8 @@ input {
               li {
                   padding: 5px 10px;
                  border-top: 1px solid #e8e8e8;
+                 border-radius: 15px;
+                 border-left: 4px solid #e8e8e8;
                 }
           }
         .content {
