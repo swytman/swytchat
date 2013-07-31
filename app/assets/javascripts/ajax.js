@@ -10,9 +10,35 @@ jQuery(function($) {
 10      //});
 11  });
 
-//1. add function which disable submit button while ajax working
-// http://stackoverflow.com/questions/4448955/loading-gif-image-while-jquery-ajax-is-running
-//http://stackoverflow.com/questions/2198476/jquery-best-way-to-block-any-other-processes-while-waiting-for-ajax-completion
+/*1. 
+add function which disable submit button while ajax working
+
+http://stackoverflow.com/questions/4448955/loading-gif-image-while-jquery-ajax-is-running
+http://stackoverflow.com/questions/2198476/jquery-best-way-to-block-any-other-processes-while-waiting-for-ajax-completion
+
+
+2.Выделение в тексте ссылок!
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<script>
+window.onload=function() {
+    document.getElementById('s').innerHTML=document.getElementById('x').innerHTML.replace(/(http:\/\/[^\s,]+)/gi, '<a href=\'$1\'>$1</a>');
+}
+</script>
+</head>
+<body>
+<div id="x">test http://ya.ru, link http://mail.ru/?id=1&num=2 end</div>
+<div id="s"></div>
+</body>
+</html>
+
+3. Открыть ссылку в новой строке
+http://stackoverflow.com/questions/12133894/open-link-in-new-tab-with-link-to
+
+<%= link_to image_tag("facebook.png", :class => "facebook_icon", :alt => "Facebook"), "http://www.facebook.com/mypage", :target => "_blank" %>
+
+*/
 
 function addMessage(message){
 item = "<li class='new_mes border15px'>"
