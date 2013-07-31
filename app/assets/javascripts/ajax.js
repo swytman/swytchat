@@ -1,4 +1,3 @@
-
 jQuery(function($) {
 2   // create a convenient toggleLoading function
 3   //var toggleLoading = function() { $("#loading").toggle() };
@@ -11,6 +10,9 @@ jQuery(function($) {
 10      //});
 11  });
 
+//1. add function which disable submit button while ajax working
+// http://stackoverflow.com/questions/4448955/loading-gif-image-while-jquery-ajax-is-running
+//http://stackoverflow.com/questions/2198476/jquery-best-way-to-block-any-other-processes-while-waiting-for-ajax-completion
 
 function addMessage(message){
 item = "<li class='new_mes border15px'>"
