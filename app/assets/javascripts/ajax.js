@@ -40,7 +40,7 @@ http://stackoverflow.com/questions/12133894/open-link-in-new-tab-with-link-to
 
 */
 
-function addMessage(message){
+function addMessage(message){// поправить функци вставлять сообщения в зависимости от room_id
 item = "<li class='new_mes border15px'>"
 	item+="<span class='user'>"+message.name+ ": </span>"
 	item+="<span class='content'>"+message.content+ "</span>"
@@ -58,10 +58,11 @@ function new_messages_check(){
 
 
 function get_messages() {
-$.getJSON(window.location.href + '/sendnew',  {
+$.getJSON(window.location.href + '/sendnew',  {//тут надо сделать адрес вида http://hostname/getnewmessages и поправить контроллер
 dataType: 'json',
 cache: false,
-last_message_id: last_message_id
+last_message_id: last_message_id //передавать json вида [{"room_id":"14", "from":"233", "to": "-1"},{"room_id":"2", "from":"0", "to": "100"}]
+//таким образом в зависимости от открытых вкладок будет идти запрос сообщений
 })
 .done (function(data){
 	
