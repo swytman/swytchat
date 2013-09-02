@@ -1,10 +1,6 @@
 <% provide(:title, @room.name) %>
 
-<script>
-window.onload=function() {
-    document.getElementById('s').innerHTML=document.getElementById('x').innerHTML.replace(/(http:\/\/[^\s,]+)/gi, '<a href=\'$1\'>$1</a>');
-}
-</script>
+
 
  <script>
  last_message_id = 0;
@@ -33,10 +29,15 @@ $('.history .btn-info').click(function (e) {
 <%= @room.name %> </h2>
 </div>
 
+
 <div class="row-fluid">
      <section>
         <%= render 'shared/message_form' %>
       </section>
+
+<% if false %>
+
+
 
     <div class="history btn-group pull-center">
     <button class="btn-link">Сегодня</button>
@@ -46,6 +47,7 @@ $('.history .btn-info').click(function (e) {
     </div>
 
 
+<% end %>
  <ol class="messages">
   <!--  <% if @room.messages.any? %>
        <%= render @messages %>
