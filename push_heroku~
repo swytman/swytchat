@@ -3,6 +3,5 @@
 
 ENV=PRODUCTION rake assets:precompile
 git add .
-git commit -m "Automark"
 git push heroku
 
