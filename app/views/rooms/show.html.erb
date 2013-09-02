@@ -9,6 +9,11 @@ $('.mes-input').keypress(function(){
 $('.new_mes').removeClass('new_mes border15px')
 })
 
+$('.history .btn-info').click(function (e) {
+  $('.history .btn-info').removeClass('active')
+  $(this).addClass('active')
+})
+
 }
  );
 </script>
@@ -26,6 +31,14 @@ $('.new_mes').removeClass('new_mes border15px')
      <section>
         <%= render 'shared/message_form' %>
       </section>
+
+    <div class="history btn-group pull-center">
+    <button class="btn-link">Сегодня</button>
+    <button class="btn-link">Неделя</button>
+    <button class="btn-link">Месяц</button>
+    <button class="btn-link">Все</button>
+    </div>
+
 
  <ol class="messages">
   <!--  <% if @room.messages.any? %>
