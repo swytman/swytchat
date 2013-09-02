@@ -1,0 +1,7 @@
+#!/bin/bash
+# Push heroku
+
+ENV=PRODUCTION rake assets:precompile
+git add .
+git push heroku
+

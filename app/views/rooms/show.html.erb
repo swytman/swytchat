@@ -1,5 +1,11 @@
 <% provide(:title, @room.name) %>
 
+<script>
+window.onload=function() {
+    document.getElementById('s').innerHTML=document.getElementById('x').innerHTML.replace(/(http:\/\/[^\s,]+)/gi, '<a href=\'$1\'>$1</a>');
+}
+</script>
+
  <script>
  last_message_id = 0;
  $(document).ready(function(){

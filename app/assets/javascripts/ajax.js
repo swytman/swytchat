@@ -1,9 +1,14 @@
 
+function autolink(text) {
+    return text.replace(/(http:\/\/[^\s,]+)/gi, '<a href=\'$1\' target="_blank">$1</a>');
+}
+
+
 
 function addMessage(message){
 item = "<li class='new_mes border15px'>"
 	item+="<span class='user'>"+message.name+ ": </span>"
-	item+="<span class='content'>"+message.content+ "</span>"
+	item+="<span class='content'>"+autolink(message.content)+ "</span>"
 	item+="<span class='timestamp'>"+message.time+ "</span>"
     item+="</li>"
     if (last_message_id < message.id) {
