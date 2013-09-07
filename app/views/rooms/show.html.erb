@@ -8,27 +8,25 @@
  get_messages();
  new_messages_check();
 
-$('#new_message').submit(function(){
-    var isFormValid = true;
-      if ($("#message_content").val().length == 0) //Проверка что текст сообщения не пустой
-       {
-         isFormValid = false;
-        }
-      return isFormValid;
+
+    $('#new_message').submit(function(){
+        var isFormValid = true;
+           if ($("#message_content").val().length == 0) //Проверка что текст сообщения не пустой
+           {
+             isFormValid = false;
+           }
+
+           if (isFormValid == true) {
+                $('.new_mes').removeClass('new_mes')
+           }
+
+           return isFormValid;
+    });
+
+
+  
+
 });
-
-
-$('.new_mes').removeClass('new_mes border15px')
-
-
-
-$('.history .btn-info').click(function (e) {
-  $('.history .btn-info').removeClass('active')
-  $(this).addClass('active')
-})
-
-}
- );
 </script>
 
 <div class="row-fluid">
