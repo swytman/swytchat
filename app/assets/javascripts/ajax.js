@@ -1,4 +1,18 @@
 var validating = false;
+
+
+
+var period = 1;
+
+function isLocalStorageAvailable() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+
+
 function autolink(text) {
     return text.replace(/(http:\/\/[^\s,]+)/gi, '<a href=\'$1\' target="_blank">$1</a>');
 }
@@ -26,7 +40,8 @@ function get_messages() {
 $.getJSON(window.location.href + '/sendnew',  {
 dataType: 'json',
 cache: false,
-last_message_id: last_message_id
+last_message_id: last_message_id,
+period: period
 })
 .done (function(data){
 	
@@ -83,6 +98,22 @@ $(document).ready(function(){
 
                return isFormValid;
         });
+
+
+   $('.btn-mini').click(this,function() {
+  
+   var id = $( this ).attr('id');
+   if (id == 'btn_all') { period = 4};
+   if (id == 'btn_month') { period = 3};
+   if (id == 'btn_week') { period = 2};
+   if (id == 'btn_day') { period = 1};
+   
+   last_message_id=0;
+   get_messages();
+   $('.messages').empty();
+   //    $( this ).button();
+  });
+  
 
 
 })

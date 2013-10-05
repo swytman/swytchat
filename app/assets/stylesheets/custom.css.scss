@@ -28,7 +28,7 @@ textarea {
 
 
 .new_mes {
-border-left: 4px solid LightGreen !important;}
+border-left: 3px solid LightGreen !important;}
 
 .mes-input {
   vertical-align: middle;
@@ -44,6 +44,12 @@ border-left: 4px solid LightGreen !important;}
 
 
 /* header */
+.logo {
+  display:inline;
+}
+
+
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -138,7 +144,7 @@ footer {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 80%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   @include box_sizing;
@@ -173,6 +179,7 @@ input {
 .history {
   padding-top: 10px;
 
+
 }
 
 .messages {
@@ -186,8 +193,8 @@ input {
               li {
                   padding: 5px 10px;
                  border-top: 1px solid #e8e8e8;
-                 border-radius: 15px;
-                 border-left: 4px solid #e8e8e8;
+                 border-radius: 0px;
+                 border-left: 3px solid #e8e8e8;
                 }
           }
         .content {

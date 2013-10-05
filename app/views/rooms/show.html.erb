@@ -7,24 +7,7 @@
  $(document).ready(function(){
  get_messages();
  new_messages_check();
-
-
-    $('#new_message').submit(function(){
-        var isFormValid = true;
-           if ($("#message_content").val().length == 0) //Проверка что текст сообщения не пустой
-           {
-             isFormValid = false;
-           }
-
-           if (isFormValid == true) {
-                $('.new_mes').removeClass('new_mes')
-           }
-
-           return isFormValid;
-    });
-
-
-  
+ 
 
 });
 </script>
@@ -42,22 +25,17 @@
 <div class="row-fluid">
      <section>
         <%= render 'shared/message_form' %>
-      </section>
+     
 
-<% if false %>
-
-
-
-    <div class="history btn-group pull-center">
-    <button class="btn-link">Сегодня</button>
-    <button class="btn-link">Неделя</button>
-    <button class="btn-link">Месяц</button>
-    <button class="btn-link">Все</button>
+ 
+    <div class="span10 history btn-group pull-center" data-toggle="buttons-radio">
+    <button class="btn btn-mini active" id="btn_day" data-toggle="button">День</button>
+    <button class="btn btn-mini" id="btn_week" data-toggle="button">Неделя</button>
+    <button class="btn btn-mini" id = "btn_month" data-toggle="button">Месяц</button>
+    <button class="btn btn-mini" id = "btn_all" data-toggle="button">Все</button>
     </div>
-
-
-<% end %>
- <ol class="messages">
+</section>
+ <ol class="span10 messages">
   <!--  <% if @room.messages.any? %>
        <%= render @messages %>
      -->

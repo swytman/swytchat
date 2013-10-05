@@ -57,11 +57,11 @@ def create
 end
 
 def sendnew
- 
-  @messages = Message.where("room_id = ? AND id > ?",
-   params[:id], params[:last_message_id])
-  #response.headers['Content-type'] = "text/plain; charset=utf-8"
-    
+
+ @date_from = date_from (params[:period])
+  @messages = Message.where("room_id = ? AND id > ? AND created_at >= ?",
+   params[:id], params[:last_message_id], @date_from)
+      
   respond_to do |format|
       format.json { 
             render :json=>@messages.map { 
