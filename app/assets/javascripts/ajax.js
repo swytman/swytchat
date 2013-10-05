@@ -3,13 +3,14 @@ var isNewMessages = false;
 
 var interval_id;
 var focused;
+var newTitle;
 
 function changeTitle(){
 
-if (document.title=='New!')
-  {document.title = 'SWYTCH'}
+if (document.title==newTitle)
+  {document.title = oldTitle}
 else
-{document.title = 'New!'}
+{document.title = newTitle}
 
 }
 
@@ -39,6 +40,7 @@ item = "<li class='new_mes border15px'>"
     if (last_message_id < message.id) {
      last_message_id = message.id }
 
+    newTitle = message.content;
      return item;
 }
 
@@ -62,7 +64,9 @@ html=""
 
 $.each(data, function(key, val) {
     html+=addMessage(val);
-    if (focused == false) {interval_id = setInterval(changeTitle, 1000);}
+    if (focused == false) {
+      
+      interval_id = setInterval(changeTitle, 1000);}
 });
 
 $('.messages').prepend(html);
@@ -111,7 +115,7 @@ $(document).ready(function(){
 
 $(window).focus(function() {
   clearInterval(interval_id);
-    document.title = 'SWYTCH';
+    document.title = oldTitle;
    focused = true;
        
 });
