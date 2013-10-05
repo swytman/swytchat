@@ -1,4 +1,17 @@
 var validating = false;
+var isNewMessages = false;
+
+var interval_id;
+var focused;
+
+function changeTitle(){
+
+if (document.title=='New!')
+  {document.title = 'SWYTCH'}
+else
+{document.title = 'New!'}
+
+}
 
 
 
@@ -25,6 +38,7 @@ item = "<li class='new_mes border15px'>"
     item+="</li>"
     if (last_message_id < message.id) {
      last_message_id = message.id }
+
      return item;
 }
 
@@ -47,7 +61,8 @@ last_message_id: last_message_id //передавать json вида [{"room_id
 html=""
 
 $.each(data, function(key, val) {
-    html+=addMessage(val)
+    html+=addMessage(val);
+    if (focused == false) {interval_id = setInterval(changeTitle, 1000);}
 });
 
 $('.messages').prepend(html);
@@ -92,6 +107,19 @@ $(document).ready(function(){
 
                return isFormValid;
         });
+
+
+$(window).focus(function() {
+  clearInterval(interval_id);
+    document.title = 'SWYTCH';
+   focused = true;
+       
+});
+$(window).blur(function() {
+   focused = false;
+       
+});
+
 
 
    $('.btn-mini').click(this,function() {
