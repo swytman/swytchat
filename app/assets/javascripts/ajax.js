@@ -1,6 +1,6 @@
 var validating = false;
 
-var period = 1;
+
 
 function isLocalStorageAvailable() {
     try {
