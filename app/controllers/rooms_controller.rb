@@ -40,7 +40,7 @@ end
         end
 
         session[:room_id] = @room.id
-        @messages = @room.messages
+       @messages = @room.messages
         @message = Message.new
   end
   
