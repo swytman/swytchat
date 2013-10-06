@@ -2,8 +2,8 @@ var validating = false;
 var isNewMessages = false;
 
 var interval_id;
-var focused;
 var newTitle;
+var oldTitle;
 
 function changeTitle(){
 
@@ -44,19 +44,55 @@ item = "<li class='new_mes border15px'>"
      return item;
 }
 
+function addUser(user, data){
+  
+  if (data.status == 'true'){
+item = "<li class='in_room'>"+ user+"</li>";
+        
+       } 
+       else {
+item = "<li>"+ user+"</li>";
+
+       }
+
+ return item;
+}
+
+
 function new_messages_check(){
   	window.setInterval("get_messages()",7000);
 
 }
 
-function get_messages() {
-$.getJSON(window.location.href + '/sendnew',  {//тут надо сделать адрес вида http://hostname/getnewmessages и поправить контроллер
+function users_check(){
+    window.setInterval("get_users()",7000);
+
+}
+
+function get_users(){
+  $.getJSON(window.location.href + '/tracking',  {
 dataType: 'json',
 cache: false,
-period: period,
-last_message_id: last_message_id //передавать json вида [{"room_id":"14", "from":"233", "to": "-1"},{"room_id":"2", "from":"0", "to": "100"}]
-//таким образом в зависимости от открытых вкладок будет идти запрос сообщений
+active: focused
+})
+.done (function(data){
+  
+html=""
 
+$.each(data, function(key, val) {
+    html+=addUser(key,val);
+  });
+
+$('.users').html(html);
+});
+
+}
+
+function get_messages() {
+$.getJSON(window.location.href + '/sendnew',  {
+cache: false,
+period: period,
+last_message_id: last_message_id 
 })
 .done (function(data){
 	

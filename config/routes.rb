@@ -5,9 +5,12 @@ match '/rooms',    to: 'rooms#index', via: :get
 match '/users',    to: 'users#index', via: :get
   
   resources :messages, only: [:create]
+    
     resources :rooms do
              get 'sendnew', :on => :member
+             get 'tracking', :on => :member
         end
+    
     resources :rooms do
              get 'password_request', :on => :member
              get 'password_check', :on => :member

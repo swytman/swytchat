@@ -6,9 +6,7 @@ http://www.dixis.com/?p=326
 <%= form_for @message, remote: true, html: {'data-type' => 'json'} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
    
-  <div class="span10">
+  
     <%= f.text_field :content, placeholder: "Пишите здесь", autofocus: true, autocomplete: :off, class: "mes-input" %>
-  
-  
-  </div>
+    
 <% end %>

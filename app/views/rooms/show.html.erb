@@ -4,42 +4,61 @@
 
  <script>
  last_message_id = 0;
+ focused = true;
+
  period = 1;
  $(document).ready(function(){
  get_messages();
+ get_users();
  new_messages_check();
+ users_check();
+
  oldTitle = document.title;
  
 
 });
 </script>
 
-<div class="row-fluid">
+            <div class="row">
+            <h2>
+            <% @room.no_pass ? @class = "free" : @class = "pass" %>
+            <% @size = '23'%>
+            <%= render 'shared/lock_icon' %>
+            <%= @room.name %> </h2>
+            </div>
 
-<h2>
-<% @room.no_pass ? @class = "free" : @class = "pass" %>
-<% @size = '23'%>
-<%= render 'shared/lock_icon' %>
-<%= @room.name %> </h2>
-</div>
+<div class="row">
+            
+            <div class="span9">
 
+              <%= render 'shared/message_form' %>
 
-<div class="row-fluid">
-     <section>
-        <%= render 'shared/message_form' %>
-     
+              <div class="history btn-group pull-center" data-toggle="buttons-radio">
+              <button class="btn btn-mini active" id="btn_day" data-toggle="button">День</button>
+              <button class="btn btn-mini" id="btn_week" data-toggle="button">Неделя</button>
+              <button class="btn btn-mini" id = "btn_month" data-toggle="button">Месяц</button>
+              <button class="btn btn-mini" id = "btn_all" data-toggle="button">Все</button>
+              </div>
 
- 
-    <div class="span10 history btn-group pull-center" data-toggle="buttons-radio">
-    <button class="btn btn-mini active" id="btn_day" data-toggle="button">День</button>
-    <button class="btn btn-mini" id="btn_week" data-toggle="button">Неделя</button>
-    <button class="btn btn-mini" id = "btn_month" data-toggle="button">Месяц</button>
-    <button class="btn btn-mini" id = "btn_all" data-toggle="button">Все</button>
-    </div>
-</section>
+              
+                    <ol class="messages">
+                      
+                    </ol>
 
-      <ol class="span10 messages">
-        
-      </ol>
- </div>
+                  
+          </div>
+
+            <div class="span3">
+            <div id="room_info">
+              <h3>Сейчас в комнате</h3>
+
+                    <ol class="users">
+                      
+                    </ol>
+                    
+            </div>
+                
+            </div>
+
+          </div>
 </div>

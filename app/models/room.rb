@@ -10,6 +10,7 @@
 #  no_pass         :boolean          default(FALSE)
 #  salt            :string(255)
 #  remember_token  :string(255)
+#  users           :text
 #
 
 class Room < ActiveRecord::Base

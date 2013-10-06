@@ -64,8 +64,8 @@ def sendnew
       
   respond_to do |format|
       format.json { 
-            render :json=>@messages.map { 
-            |message| 
+          render :json=>@messages.map { 
+          |message| 
             {
             :id => message.id,
             :name => message.user.name,
@@ -75,6 +75,26 @@ def sendnew
       }
     end
 end
+
+def tracking
+  @room = Room.find(params[:id])
+  @trackingjson = @room.users
+  @json = update_tracking(@trackingjson, session[:user_name],params[:active])
+  @room.users = @json
+  @room.save!
+
+
+  respond_to do |format|
+      format.json { 
+        render :json => @json
+
+          }
+        
+              
+  end
+end
+      
+
 
  
 

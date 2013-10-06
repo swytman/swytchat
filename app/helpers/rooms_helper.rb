@@ -25,5 +25,19 @@ module RoomsHelper
 		end
 	end
 
+	def update_tracking (trackjson, user, status)
+		if trackjson == nil
+			json = {user => {:status => status, :time => Time.now.strftime("%H:%M:%S")}}.to_json
+			return json
+		end
+
+		h = JSON.parse(trackjson)
+		h[user] = {:status => status, :time => Time.now.strftime("%H:%M:%S")}
+		
+		return h.to_json
+		
+	
+
+	end
 
 end

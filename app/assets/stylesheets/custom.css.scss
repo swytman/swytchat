@@ -89,6 +89,14 @@ h2 {
   color: $grayLight;
 }
 
+h3 {
+   font-size: 1.2em;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -144,7 +152,6 @@ footer {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  padding: 10px;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -176,9 +183,7 @@ input {
 /* messages */
 
 .history {
-  padding-top: 10px;
-
-
+  
 }
 
 .messages {
@@ -212,5 +217,24 @@ input {
 .new_mes {
 border-left: 4px solid #e8e8e8 !important;
 padding-left: 10px !important;
+
+}
+
+#room_info {
+padding: 4px 6px;
+border-left:1px solid $grayLighter;
+width: 100%;
+min-height: 300px;
+
+.users{
+  list-style: none;
+ li{color: #606060
+ } 
+ 
+}
+
+.in_room{
+  color: black !important;
+}
 
 }
