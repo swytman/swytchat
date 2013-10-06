@@ -66,6 +66,7 @@ $.each(data, function(key, val) {
     html+=addMessage(val);
     if (focused == false) {
       
+      clearInterval(interval_id);
       interval_id = setInterval(changeTitle, 500);}
 });
 
