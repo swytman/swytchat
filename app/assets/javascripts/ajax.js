@@ -60,7 +60,7 @@ item = "<li>"+ user+"</li>";
 
 
 function new_messages_check(){
-  	window.setInterval("get_messages()",7000);
+  	window.setInterval("get_messages()",10000);
 
 }
 
@@ -153,11 +153,15 @@ $(document).ready(function(){
 $(window).focus(function() {
   clearInterval(interval_id);
     document.title = oldTitle;
+
    focused = true;
+   get_users();
+   get_messages();
        
 });
 $(window).blur(function() {
    focused = false;
+   get_users();
        
 });
 
