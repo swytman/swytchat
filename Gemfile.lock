@@ -166,6 +166,7 @@ DEPENDENCIES
   factory_girl_rails (= 4.1.0)
   jbuilder (~> 1.2)
   jquery-rails
+  json
   pg (= 0.15.1)
   protected_attributes
   rails (= 4.0.0)

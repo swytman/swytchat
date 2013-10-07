@@ -9,6 +9,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'protected_attributes'
+gem 'json'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
