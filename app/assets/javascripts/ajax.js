@@ -65,7 +65,7 @@ function new_messages_check(){
 }
 
 function users_check(){
-    window.setInterval("get_users()",7000);
+    window.setInterval("get_users()",30000);
 
 }
 
