@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 #gem 'railties', '4.0.0'
 gem 'sass-rails'
-gem 'haml-rails', '>= 0.3.4'a
+gem 'haml-rails', '>= 0.3.4'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'will_paginate', '3.0.3'
