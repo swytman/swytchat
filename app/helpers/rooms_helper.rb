@@ -1,13 +1,19 @@
 module RoomsHelper
 
 	def save_room_token (room)
-		cookies.permanent["#{room.id}token"]= room.remember_token
+		
+		cookies.permanent["#{room.id}token"]= { :value => room.remember_token, :expires => Time.now + 3600}
 	end
 
 	def check_room_token (room)
 		@r = Room.find_by_remember_token(cookies["#{room.id}token"])
 		return ( !@r.nil? && @r.id == room.id)
 	end
+
+def create_remember_token
+      return remember_token = SecureRandom.urlsafe_base64
+    end
+
 
 	def date_from (period)
 

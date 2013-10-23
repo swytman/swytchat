@@ -27,7 +27,7 @@ has_many :messages
   validates :name, length: { maximum: 50 }, presence: true,
 					uniqueness: {case_sensitive: false}
  
-before_save :create_remember_token
+
 
 ##def authenticate(password)
  ##   password.present? && password_digest.present? && password_digest == BCrypt::Engine.hash_secret(password, password_salt)
@@ -43,10 +43,7 @@ before_save :create_remember_token
 
 private
 
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
-    end
-
+   
 def setting_password?
     password.present? || password_confirmation.present?
 end

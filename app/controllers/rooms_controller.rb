@@ -3,6 +3,22 @@ class RoomsController < ApplicationController
                 only: [:index, :show, :new]    
 
   
+def edit
+  @room = Room.find(params[:id])
+end
+
+def update
+  @room = Room.find(params[:id])
+  @room.remember_token = create_remember_token
+  params[:room][:password].blank? ? @room.no_pass = true : @room.no_pass = false
+  if @room.update_attributes(params[:room])
+    flash[:success] = "Обновлено!"
+   redirect_to room_path
+  else
+    render 'edit'
+  end
+end  
+
 
   def new
   	@room = Room.new
@@ -47,6 +63,7 @@ end
 
 def create
  @room = Room.new( params[:room] )
+ @room.remember_token = create_remember_token
   @room.password.blank? ? @room.no_pass = true : @room.no_pass = false
    if @room.save
     flash[:success] = "Добро пожаловать в #{@room.name}"
