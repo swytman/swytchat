@@ -15,10 +15,11 @@
 
 class Room < ActiveRecord::Base
 
-  attr_accessible :name, :password, :password_confirmation
+  attr_accessible :name#:password, :password_confirmation
 
   has_secure_password :validations => false
 
+belongs_to :user
 has_many :messages
 
   validates :password, presence: true, confirmation: true, :if => :setting_password?

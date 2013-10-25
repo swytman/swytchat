@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006161909) do
+ActiveRecord::Schema.define(version: 20131025154825) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20131006161909) do
     t.string   "salt"
     t.string   "remember_token"
     t.text     "users"
+    t.integer  "user_id"
   end
 
   add_index "rooms", ["name"], name: "index_rooms_on_name"

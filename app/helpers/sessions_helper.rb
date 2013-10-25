@@ -17,7 +17,8 @@ def current_user=(user)
 
   def current_user
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
-  store_user (@current_user)
+    store_user (@current_user)
+    return @current_user
   end
 
 

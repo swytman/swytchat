@@ -24,7 +24,13 @@
             <% @room.no_pass ? @class = "free" : @class = "pass" %>
             <% @size = '21'%>
             <%= render 'shared/lock_icon' %>
-            <%=link_to @room.name, {:controller => "rooms", :action =>"edit", :id => @room.id}%> </h2>
+            <% if current_user.id == @room.user_id
+            concat link_to @room.name, {:controller => "rooms", :action =>"edit", :id => @room.id}
+            else
+            concat @room.name
+            end%>
+
+             </h2>
             </div>
 
 <div class="row">

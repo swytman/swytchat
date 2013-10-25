@@ -8,7 +8,13 @@ def edit
 end
 
 def update
-  @room = Room.find(params[:id])
+
+  @room = current_user.rooms.find_by_id(params[:id])
+    if @room.nil? #only author can edit a room
+     flash[:error] = "Нет прав"
+     return redirect_to root_path
+    end
+
   @room.remember_token = create_remember_token
   params[:room][:password].blank? ? @room.no_pass = true : @room.no_pass = false
   if @room.update_attributes(params[:room])
@@ -62,7 +68,7 @@ end
   
 
 def create
- @room = Room.new( params[:room] )
+ @room = current_user.rooms.build( params[:room] )
  @room.remember_token = create_remember_token
   @room.password.blank? ? @room.no_pass = true : @room.no_pass = false
    if @room.save
