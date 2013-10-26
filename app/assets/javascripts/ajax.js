@@ -26,7 +26,7 @@ function isLocalStorageAvailable() {
 
 
 function autolink(text) {
-    return text.replace(/(http:\/\/[^\s,]+)/gi, '<a href=\'$1\' target="_blank">$1</a>');
+    return text.replace(/(https?:\/\/[^\s,]+)/gi,'<a href=\'$1\' target="_blank">$1</a>');
 }
 
 
