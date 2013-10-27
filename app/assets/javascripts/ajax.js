@@ -181,4 +181,15 @@ $(window).blur(function() {
    
   });
 
+$('#chpass').click(function() {
+    var $this = $(this);
+    // $this will contain a reference to the checkbox   
+    if ($this.is(':checked')) {
+        $('#div_chpass').fadeIn("fast")
+    } else {
+      $('#div_chpass').fadeOut("fast")
+    }
+});
+
+
 });

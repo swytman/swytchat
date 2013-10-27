@@ -7,12 +7,19 @@
       =render 'shared/error_messages', object: f.object 
       =f.label 'Название:'
       =f.text_field :name
-     
-      = f.label 'Пароль'
-      = f.password_field :password 
 
-      = f.label "Подтверждение" 
-      = f.password_field :password_confirmation  
+     
+      = check_box_tag 'chpass'
+      =f.label 'Изменть пароль', for: 'chpass', class: 'checkbox inline'
+
+      %p
+
+      #div_chpass
+        = f.label 'Пароль'
+        = f.password_field :password 
+
+        = f.label "Подтверждение" 
+        = f.password_field :password_confirmation  
 
       =f.submit "Сохранить", class: "btn btn-primary"
       
