@@ -15,8 +15,12 @@ def update
      return redirect_to root_path
     end
 
+
+if params[:chpass] #was password changed?
   @room.remember_token = create_remember_token
   params[:room][:password].blank? ? @room.no_pass = true : @room.no_pass = false
+end
+
   if @room.update_attributes(params[:room])
     flash[:success] = "Обновлено!"
    redirect_to room_path
