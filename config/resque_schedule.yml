@@ -1,0 +1,5 @@
+every_one_minute_job:
+ cron: "*/1 * * * *"
+ class: ClearOfflineUsers
+ args: 
+ description: “every one minute job”

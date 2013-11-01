@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
  before_filter :signed_in_user,
-                only: [:index, :show, :new]    
+                only: [:index, :show, :new, :sendnew, :tracking]    
 
   
 def edit
