@@ -40,10 +40,11 @@ def create_remember_token
 		h = JSON.parse(trackjson)
 		h[user] = {:status => status, :time => Time.now.strftime("%H:%M:%S")}
 		
-		return h.to_json
-		
-	
+	return h.to_json
+	end
 
+	def ClearOld (json)
+		return ''
 	end
 
 end

@@ -8,6 +8,7 @@
 
  period = 1;
  $(document).ready(function(){
+ room_id = <%= @room.id %>
  get_messages();
  get_users();
  new_messages_check();
@@ -56,7 +57,7 @@
 
             <div class="span3">
             <div id="room_info">
-              <h3>Участники</h3>
+              <h3>Сейчас в комнате</h3>
 
                     <ol class="users">
                       

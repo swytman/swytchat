@@ -3,6 +3,7 @@ Swytchat::Application.routes.draw do
 root to: 'rooms#index'
 match '/rooms',    to: 'rooms#index', via: :get
 match '/users',    to: 'users#index', via: :get
+match '/activities/active_users', to: 'activities#active_users', via: :get
   
   resources :messages, only: [:create]
     
@@ -17,6 +18,7 @@ match '/users',    to: 'users#index', via: :get
              end    
 
   resources :users
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 #match '/messages/getnew', to: 'messages#sendnew', via: :get

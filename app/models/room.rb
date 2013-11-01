@@ -27,8 +27,8 @@ has_many :messages
 
   validates :name, length: { maximum: 50 }, presence: true,
 					uniqueness: {case_sensitive: false}
- 
-
+ has_many :activities, foreign_key: "room_id"
+ has_many :active_users, :through => :activities
 
 ##def authenticate(password)
  ##   password.present? && password_digest.present? && password_digest == BCrypt::Engine.hash_secret(password, password_salt)

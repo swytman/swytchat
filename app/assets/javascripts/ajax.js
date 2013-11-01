@@ -47,11 +47,11 @@ item = "<li class='new_mes border15px'>"
 function addUser(user, data){
   
   if (data.status == 'true'){
-item = "<li class='in_room'>"+ user+"</li>";
+item = "<li class='in_room'>"+ data.name+"</li>";
         
        } 
        else {
-item = "<li>"+ user+"</li>";
+item = "<li>"+ data.name+"</li>";
 
        }
 
@@ -70,10 +70,11 @@ function users_check(){
 }
 
 function get_users(){
-  $.getJSON(window.location.href + '/tracking',  {
+  $.getJSON(window.location.origin + '/activities/active_users',  {
 dataType: 'json',
 cache: false,
-active: focused
+active: focused,
+id: room_id
 })
 .done (function(data){
   

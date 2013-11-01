@@ -21,5 +21,7 @@ module Swytchat
  config.i18n.default_locale = :en
  config.i18n.locale = :en
  config.time_zone = 'Moscow'
+ config.autoload_paths += Dir["#{config.root}/lib/**/"]
+ config.autoload_paths += %W(#{config.root}/lib)
   end
 end

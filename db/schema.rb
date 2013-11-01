@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025154825) do
+ActiveRecord::Schema.define(version: 20131029185658) do
+
+  create_table "activities", force: true do |t|
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "activities", ["room_id", "user_id"], name: "index_activities_on_room_id_and_user_id", unique: true
+  add_index "activities", ["room_id"], name: "index_activities_on_room_id"
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
   create_table "messages", force: true do |t|
     t.text     "content"
