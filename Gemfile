@@ -14,11 +14,20 @@ gem 'json'
 gem 'resque'
 gem 'resque-scheduler', :require => 'resque_scheduler'
 gem 'redis'
+gem 'rvm'
+# Unicorn Web Server
+gem 'unicorn'
+ 
 
+
+gem 'pg', '0.15.1'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'
-  gem 'rspec-rails'
+   gem 'rspec-rails'
+   # Deploy with Capistrano
+	gem 'capistrano'
+# Capistrano RVM integration
+	gem 'rvm-capistrano'
 end
 
 group :development do
