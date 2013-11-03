@@ -1,17 +1,6 @@
 require "resque/tasks"
 require 'resque_scheduler/tasks'
 
-task "resque:setup" => :environment
-
-namespace :resque do
- task :setup do
-    require 'resque'
-    require 'resque_scheduler'
-   
-    Resque.redis = 'localhost:6379'
-    Resque.schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
- end
-
 def run_worker(queue, count = 1)
   puts "Starting #{count} worker(s) with QUEUE: #{queue}"
   ops = {:pgroup => true, :err => [(Rails.root + "log/workers_error.log").to_s, "a"], 
@@ -30,7 +19,7 @@ def run_scheduler
   puts "Starting resque scheduler"
   env_vars = {
     "BACKGROUND" => "1",
-    "PIDFILE" => (Rails.root + "tmp/pids/resque_scheduler.pid").to_s,
+    "PIDFILE" => (Rails.root + "shared/pids/resque_scheduler.pid").to_s,
     "VERBOSE" => "1"
   }
   ops = {:pgroup => true, :err => [(Rails.root + "log/scheduler_error.log").to_s, "a"],
@@ -40,8 +29,16 @@ def run_scheduler
 end
  
 namespace :resque do
+
+
   task :setup => :environment
- 
+ #task :setup do
+    #require 'resque'
+   # require 'resque_scheduler'
+   
+   # Resque.redis = 'localhost:6379'
+   # Resque.schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
+ #end
   desc "Restart running workers"
   task :restart_workers => :environment do
     Rake::Task['resque:stop_workers'].invoke
@@ -77,7 +74,7 @@ namespace :resque do
  
   desc "Quit scheduler"
   task :stop_scheduler => :environment do
-    pidfile = Rails.root + "tmp/pids/resque_scheduler.pid"
+    pidfile = Rails.root + "shared/pids/resque_scheduler.pid"
     if !File.exists?(pidfile)
       puts "Scheduler not running"
     else
@@ -96,7 +93,7 @@ namespace :resque do
  
   desc "Reload schedule"
   task :reload_schedule => :environment do
-    pidfile = Rails.root + "tmp/pids/resque_scheduler.pid"
+    pidfile = Rails.root + "shared/pids/resque_scheduler.pid"
  
     if !File.exists?(pidfile)
       puts "Scheduler not running"
@@ -107,6 +104,6 @@ namespace :resque do
       system(syscmd)
     end
   end
-end
+
 
 end
