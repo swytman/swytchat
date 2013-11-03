@@ -128,3 +128,99 @@ I, [2013-11-03T17:27:15.381558 #24797]  INFO -- : listening on addr=/home/swyt/r
 I, [2013-11-03T17:27:15.905433 #24797]  INFO -- : master process ready
 I, [2013-11-03T17:27:15.919705 #25087]  INFO -- : worker=0 ready
 I, [2013-11-03T17:27:15.921559 #25090]  INFO -- : worker=1 ready
+I, [2013-11-03T22:52:47.294028 #5519]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-03T22:52:53.305320 #5519]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T22:52:53.305603 #5519]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+E, [2013-11-03T22:52:53.830783 #5519] ERROR -- : YAML syntax error occurred while parsing /home/swyt/rails_project/swytchat/config/database.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1 (RuntimeError)
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application/configuration.rb:113:in `rescue in database_configuration'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application/configuration.rb:103:in `database_configuration'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/railtie.rb:174:in `block (2 levels) in <class:Railtie>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:44:in `each'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/base.rb:322:in `<module:ActiveRecord>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/base.rb:22:in `<top (required)>'
+./config/unicorn.rb:43:in `block in reload'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:495:in `call'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:495:in `spawn_missing_workers'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:142:in `start'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/bin/unicorn_rails:209:in `<top (required)>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/unicorn_rails:23:in `load'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/unicorn_rails:23:in `<main>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `eval'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `<main>'
+I, [2013-11-03T22:57:11.848026 #5877]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-03T22:57:13.951870 #5877]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T22:57:13.952162 #5877]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+E, [2013-11-03T22:57:14.201945 #5877] ERROR -- : YAML syntax error occurred while parsing /home/swyt/rails_project/swytchat/config/database.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Error: (<unknown>): did not find expected key while parsing a block mapping at line 1 column 1 (RuntimeError)
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application/configuration.rb:113:in `rescue in database_configuration'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application/configuration.rb:103:in `database_configuration'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/railtie.rb:174:in `block (2 levels) in <class:Railtie>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:44:in `each'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/base.rb:322:in `<module:ActiveRecord>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/base.rb:22:in `<top (required)>'
+./config/unicorn.rb:43:in `block in reload'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:495:in `call'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:495:in `spawn_missing_workers'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:142:in `start'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/bin/unicorn_rails:209:in `<top (required)>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/unicorn_rails:23:in `load'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/unicorn_rails:23:in `<main>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `eval'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `<main>'
+I, [2013-11-03T23:04:49.195766 #6248]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-03T23:04:51.332655 #6248]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T23:04:51.333050 #6248]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+E, [2013-11-03T23:04:51.593977 #6248] ERROR -- : development database is not configured (ActiveRecord::AdapterNotSpecified)
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/connection_specification.rb:44:in `resolve_string_connection'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/connection_specification.rb:30:in `spec'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_handling.rb:39:in `establish_connection'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/railtie.rb:175:in `block (2 levels) in <class:Railtie>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:45:in `block in run_load_hooks'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:44:in `each'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:44:in `run_load_hooks'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/base.rb:322:in `<module:ActiveRecord>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/base.rb:22:in `<top (required)>'
+./config/unicorn.rb:43:in `block in reload'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:495:in `call'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:495:in `spawn_missing_workers'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/lib/unicorn/http_server.rb:142:in `start'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/gems/unicorn-4.6.3/bin/unicorn_rails:209:in `<top (required)>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/unicorn_rails:23:in `load'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/unicorn_rails:23:in `<main>'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `eval'
+/home/swyt/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `<main>'
+I, [2013-11-03T23:07:48.905244 #6576]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-03T23:07:51.009898 #6576]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T23:07:51.010183 #6576]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+I, [2013-11-03T23:07:51.779617 #6576]  INFO -- : master process ready
+I, [2013-11-03T23:07:51.815037 #6872]  INFO -- : worker=0 ready
+I, [2013-11-03T23:07:51.815037 #6875]  INFO -- : worker=1 ready
+I, [2013-11-03T23:09:15.683034 #6955]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-03T23:09:17.813605 #6955]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T23:09:17.813901 #6955]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+I, [2013-11-03T23:09:18.191700 #6955]  INFO -- : master process ready
+I, [2013-11-03T23:09:18.210621 #7254]  INFO -- : worker=1 ready
+I, [2013-11-03T23:09:18.210697 #7251]  INFO -- : worker=0 ready
+I, [2013-11-03T23:11:47.406164 #7311]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+E, [2013-11-03T23:11:49.516206 #7311] ERROR -- : adding listener failed addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock (in use)
+E, [2013-11-03T23:11:49.516353 #7311] ERROR -- : retrying in 0.5 seconds (4 tries left)
+I, [2013-11-03T23:11:50.016919 #7311]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T23:11:50.017491 #7311]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+I, [2013-11-03T23:11:50.419342 #7311]  INFO -- : master process ready
+I, [2013-11-03T23:11:50.446337 #7607]  INFO -- : worker=0 ready
+I, [2013-11-03T23:11:50.449643 #7610]  INFO -- : worker=1 ready
