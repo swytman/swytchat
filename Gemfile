@@ -17,7 +17,7 @@ gem 'redis'
 gem 'rvm'
 # Unicorn Web Server
 gem 'unicorn'
- 
+ gem 'therubyracer'
 
 
 gem 'pg', '0.15.1'

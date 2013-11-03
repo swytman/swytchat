@@ -2,7 +2,7 @@ env = ENV["RAILS_ENV"]
 
 if env == "production"
   RAILS_ROOT = "/home/swytman/swyttalk.ru/current/"
-  user 'swyt', 'swyt'
+  user 'swytman', 'swytman'
 else
   RAILS_ROOT = "/home/swyt/rails_project/swytchat/"
   user 'swyt', 'swyt'
