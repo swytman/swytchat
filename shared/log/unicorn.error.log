@@ -121,3 +121,10 @@ I, [2013-11-02T11:48:40.452345 #14829]  INFO -- : worker=1 ready
 127.0.0.1 - - [02/Nov/2013 11:51:01] "GET /resque/workers HTTP/1.0" 200 1859 0.0130
 127.0.0.1 - - [02/Nov/2013 11:51:01] "GET /resque/idle.png HTTP/1.0" 200 661 0.0496
 127.0.0.1 - - [02/Nov/2013 11:51:04] "GET /resque/overview HTTP/1.0" 200 2228 0.0721
+I, [2013-11-03T17:27:13.460113 #24797]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-03T17:27:15.380889 #24797]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-03T17:27:15.381558 #24797]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+I, [2013-11-03T17:27:15.905433 #24797]  INFO -- : master process ready
+I, [2013-11-03T17:27:15.919705 #25087]  INFO -- : worker=0 ready
+I, [2013-11-03T17:27:15.921559 #25090]  INFO -- : worker=1 ready
