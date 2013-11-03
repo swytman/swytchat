@@ -2,11 +2,11 @@ production:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: swytchat_production
+  database: swytchat_productiont
   pool: 5
   timeout: 5000
   username: postgres
-  password: 123
+  password: slar177
 
 development:
   adapter: postgresql
