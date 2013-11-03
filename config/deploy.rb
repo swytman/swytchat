@@ -19,6 +19,7 @@ set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/current/shared/pids/unicorn.pid"
 
 after 'deploy:update_code', 'deploy:symlink_shared'
+after 'deploy:restart', 'unicorn:restart'
 
 def run_remote_rake(rake_cmd)
   rake_args = ENV['RAKE_ARGS'].to_s.split(',')
