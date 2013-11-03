@@ -33,11 +33,11 @@ namespace :resque do
 
   task :setup => :environment
  #task :setup do
-    #require 'resque'
-   # require 'resque_scheduler'
+    require 'resque'
+    require 'resque_scheduler'
    
-   # Resque.redis = 'localhost:6379'
-   # Resque.schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
+   Resque.redis = 'localhost:6379'
+   Resque.schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
  #end
   desc "Restart running workers"
   task :restart_workers => :environment do
@@ -62,8 +62,7 @@ namespace :resque do
   
   desc "Start workers"
   task :start_workers => :environment do
-    run_worker("*", 2)
-    run_worker("high", 1)
+    run_worker("*", 1)
   end
  
   desc "Restart scheduler"
