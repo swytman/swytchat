@@ -1,5 +1,7 @@
 Swytchat::Application.routes.draw do
-  
+ 
+ mount Resque::Server, :at => "/resque" 
+
 root to: 'rooms#index'
 match '/rooms',    to: 'rooms#index', via: :get
 match '/users',    to: 'users#index', via: :get
