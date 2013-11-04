@@ -224,3 +224,20 @@ I, [2013-11-03T23:11:50.017491 #7311]  INFO -- : listening on addr=/home/swyt/ra
 I, [2013-11-03T23:11:50.419342 #7311]  INFO -- : master process ready
 I, [2013-11-03T23:11:50.446337 #7607]  INFO -- : worker=0 ready
 I, [2013-11-03T23:11:50.449643 #7610]  INFO -- : worker=1 ready
+I, [2013-11-04T20:21:47.680482 #5313]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-04T20:21:55.279356 #5313]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-04T20:21:55.279623 #5313]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+I, [2013-11-04T20:21:56.196708 #5313]  INFO -- : master process ready
+I, [2013-11-04T20:21:56.225919 #5643]  INFO -- : worker=1 ready
+I, [2013-11-04T20:21:56.225919 #5640]  INFO -- : worker=0 ready
+I, [2013-11-04T21:12:24.031963 #5313]  INFO -- : reaped #<Process::Status: pid 5640 exit 0> worker=0
+I, [2013-11-04T21:12:24.032145 #5313]  INFO -- : reaped #<Process::Status: pid 5643 exit 0> worker=1
+I, [2013-11-04T21:12:24.032279 #5313]  INFO -- : master complete
+I, [2013-11-04T21:12:33.113888 #12298]  INFO -- : Refreshing Gem list
+Resque::Helpers will be gone with no replacement in Resque 2.0.0.
+I, [2013-11-04T21:12:35.501660 #12298]  INFO -- : unlinking existing socket=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock
+I, [2013-11-04T21:12:35.501922 #12298]  INFO -- : listening on addr=/home/swyt/rails_project/swytchat/shared/sockets/unicorn.sock fd=12
+I, [2013-11-04T21:12:35.550560 #12298]  INFO -- : master process ready
+I, [2013-11-04T21:12:35.565130 #12598]  INFO -- : worker=0 ready
+I, [2013-11-04T21:12:35.571645 #12601]  INFO -- : worker=1 ready

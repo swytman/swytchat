@@ -18,7 +18,7 @@ gem 'rvm'
 # Unicorn Web Server
 gem 'unicorn'
  gem 'therubyracer'
-
+gem "paperclip", "~> 3.0"
 
 gem 'pg', '0.15.1'
 # Use sqlite3 as the database for Active Record

@@ -30,6 +30,7 @@ validates :password_confirmation, presence: true
 has_many :messages
 has_many :rooms
 has_many :activities, foreign_key: "user_id"
+has_many :attach_file, foreign_key: "user_id"
 
 private
 

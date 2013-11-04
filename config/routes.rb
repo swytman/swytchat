@@ -8,6 +8,9 @@ match '/users',    to: 'users#index', via: :get
 match '/activities/active_users', to: 'activities#active_users', via: :get
   
   resources :messages, only: [:create]
+
+  resources :attach_files, only: [:create, :destroy]
+
     
     resources :rooms do
              get 'sendnew', :on => :member
