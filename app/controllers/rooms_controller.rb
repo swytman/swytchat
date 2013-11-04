@@ -58,6 +58,7 @@ end
 
   def show
     @room = Room.find(params[:id])
+    @attachfile = @room.attach_file.build
 
         if !@room.no_pass then
           if !check_room_token (@room) then

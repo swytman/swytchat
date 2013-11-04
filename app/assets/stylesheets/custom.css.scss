@@ -194,8 +194,23 @@ input {
 
 /* messages */
 
-.history {
-  
+#new_attach_file{
+$att_height: 25px;
+  p {
+
+    #files_file{
+    height: $att_height !important;
+    width: 70% 
+    }
+    #attach_send_btn {
+    padding-top: 0px;
+    height: $att_height !important;
+    vertical-align: top 
+    }
+
+  }
+
+
 }
 
 .messages {

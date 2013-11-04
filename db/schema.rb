@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029185658) do
+ActiveRecord::Schema.define(version: 20131104163441) do
 
   create_table "activities", force: true do |t|
     t.integer  "room_id"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20131029185658) do
   add_index "activities", ["room_id", "user_id"], name: "index_activities_on_room_id_and_user_id", unique: true, using: :btree
   add_index "activities", ["room_id"], name: "index_activities_on_room_id", using: :btree
   add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
+
+  create_table "attach_files", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "room_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.text     "content"

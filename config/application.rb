@@ -23,5 +23,7 @@ module Swytchat
  config.time_zone = 'Moscow'
  config.autoload_paths += Dir["#{config.root}/lib/**/"]
  config.autoload_paths += %W(#{config.root}/lib)
+
+ Paperclip::Railtie.insert
   end
 end
