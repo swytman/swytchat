@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include RoomsHelper
   include ActivitiesHelper
+  include MessagesHelper
 	
 
   protect_from_forgery with: :exception
