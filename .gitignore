@@ -8,8 +8,9 @@
 /.bundle
 /config/database.yml
 /shared/log/*.log
-/shared/pids/*.pid
+/shared/**
 /public/system/**
+
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
