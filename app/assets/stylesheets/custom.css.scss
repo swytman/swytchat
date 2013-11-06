@@ -194,24 +194,56 @@ input {
 
 /* messages */
 
-#new_attach_file{
+/* at5tach file */
 $att_height: 25px;
-  p {
 
-    #files_file{
-    height: $att_height !important;
-    width: 70% 
-    }
-    #attach_send_btn {
-    padding-top: 0px !important;
-    height: $att_height !important;
-    vertical-align: top 
-    }
+#att_file_container{
+  padding-bottom:20px;
+  height: $att_height;
+}
 
-  }
+#btn_display_file{
+      i {
+      vertical-align:middle
+      }
+
+  display:inline-block;
+  height: $att_height;
+  width: $att_height;
+  vertical-align:top;
+  padding:0;
+
+}
+
+#attach_file{
+  display:inline-block;
+  transition: height 0.01s;
+  
+}
+
+#new_attach_file{
+height: $att_height;
+
+margin: 0;
+}
+
+#files_file{
+height: $att_height !important;
+margin:0;
 
 
 }
+    
+#attach_send_btn {
+padding-top: 0px !important;
+height: $att_height !important;
+vertical-align: top 
+}
+
+  
+
+
+
 
 .messages {
 

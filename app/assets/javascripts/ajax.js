@@ -32,13 +32,15 @@ function autolink(text) {
 
 
 function addMessage(message){// поправить функци вставлять сообщения в зависимости от room_id
-item = "<li class='new_mes border15px'>"
+item = "<li id='mes"+message.id+"' class='new_mes border15px'>"
 	item+="<span class='user'>"+message.name+ ": </span>"
 	item+="<span class='content'>"+autolink(message.content)+ "</span>"
 	item+="<span class='timestamp'>"+message.time+ "</span>"
     item+="</li>"
     if (last_message_id < message.id) {
      last_message_id = message.id }
+//enable popover... no need yet
+//$('#btn_day').popover({ title: 'Look! A bird!', content: 'jaja', html:true })
 
     newTitle = message.content;
      return item;
