@@ -2,10 +2,23 @@
 
 /* mixins, variables, etc. */
 
+@mixin link_black {
+
+
+    color: black !important;
+    text-decoration: none !important;
+   
+
+}
+
+
+
 $grayMediumLight: #eaeaea;
 
-/* universal */
 
+.link_black:hover{
+        @include link_black;
+      }
 
 
 #div_chpass{
@@ -290,9 +303,9 @@ min-height: 300px;
 .users{
  padding-left:15px;
   list-style: none;
-    li{
-
-      color: #606060
+    li a:hover{
+    @include link_black;
+      
  } 
  
 }

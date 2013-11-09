@@ -19,6 +19,7 @@ set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/current/shared/pids/unicorn.pid"
 
 after 'deploy:update_code', 'deploy:symlink_shared'
+after 'deploy:symlink_shared', 'db:migrate'
 after 'deploy:restart', 'unicorn:restart'
 #after 'deploy:restart', 'deploy:restart_workers'
 #after 'deploy:restart', 'deploy:restart_scheduler'
@@ -52,7 +53,7 @@ end
 
 
 # UNICORN
-namespace :unicorn do
+namespace :unicorn donam
   task :restart do
     stop
     start
@@ -76,5 +77,11 @@ namespace :nginx do
   task :stop do
     sudo "sudo service nginx stop"
   end
+
+name :db do
+  task :migrate do
+  run_remote_rake "db:migrate"
+  end
+
 end
 

@@ -26,7 +26,8 @@
             <% @size = '21'%>
             <%= render 'shared/lock_icon' %>
             <% if current_user.id == @room.user_id
-            concat link_to @room.name, {:controller => "rooms", :action =>"edit", :id => @room.id}
+            concat link_to @room.name,  {:controller => "rooms", :action =>"edit", :id => @room.id}, class: 'link_black'
+            
             else
             concat @room.name
             end%>

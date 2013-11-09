@@ -76,7 +76,7 @@ function get_users(){
 dataType: 'json',
 cache: false,
 active: focused,
-id: room_id
+room_id: room_id
 })
 .done (function(data){
   

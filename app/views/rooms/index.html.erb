@@ -16,7 +16,7 @@ window.onload=function() {
   <%  room.no_pass ? @class = "free" : @class = "pass" %>
    <% @size = '18' %>
    <%= render 'shared/lock_icon' %>
-   <%= link_to room.name, {:controller => "rooms", :action =>"show", :id => room.id}, :class => @class
+   <%= link_to room.name, {:controller => "rooms", :action =>"show", :id => room.id}, :class => @class+" link_black"
    %>
 
 </li>

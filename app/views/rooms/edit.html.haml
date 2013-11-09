@@ -1,4 +1,4 @@
-%h1
+%h2
   Редактирование комнаты
 
 .row
@@ -8,6 +8,7 @@
       =f.label 'Название:'
       =f.text_field :name
 
+      %p
      
       = check_box_tag 'chpass'
       =f.label 'Изменть пароль', for: 'chpass', class: 'checkbox inline'
