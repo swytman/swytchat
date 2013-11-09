@@ -1,0 +1,40 @@
+= provide(:title, 'Редактирование информации пользователя')
+
+%h2
+  Редактирование профиля
+
+
+.row
+  .span6.offset3
+    
+    =form_for @user, :html => {:multipart=> true, :autocomplete => "off"} do |f|
+
+      = render "shared/error_messages", object: f.object
+
+      = f.label :name
+      = f.text_field :name, autofocus: true
+
+      = f.label :email
+      = f.text_field :email
+
+      = f.label 'Загрузить аватар'
+      = f.file_field :avatar
+
+      %p
+
+      = check_box_tag 'chpass'
+      =f.label 'Изменть пароль', for: 'chpass', class: 'checkbox inline'
+
+      %p
+
+      #div_chpass
+        = f.label 'Пароль'
+        = f.password_field :password 
+
+        = f.label "Подтверждение" 
+        = f.password_field :password_confirmation
+
+      %p 
+
+      = f.submit "Готово", class: "btn btn-primary"
+

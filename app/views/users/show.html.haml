@@ -1,0 +1,25 @@
+=provide :title, @user.name
+
+
+.row
+	%h2
+		- if @user.id==current_user.id 
+			="Профиль пользователя "
+			=link_to @user.name, edit_user_path(@user.id)
+		- else
+			="Профиль пользователя " + @user.name
+		
+.row
+	%aside.span4
+		%section
+			=image_tag @user.avatar.url(:medium)
+	%aside.span8
+		%p
+			="Число сообщений: "
+			= @cnt_messages
+		%p
+			="Дата регистрации: "
+			= @user_registred
+	
+		
+		
