@@ -23,6 +23,7 @@
         = f.password_field :password_confirmation  
 
       =f.submit "Сохранить", class: "btn btn-primary"
+      =link_to ' Удалить комнату', @room, method: 'delete'
       
     
    

@@ -1,23 +1,25 @@
 <% provide(:title, 'Регистрация пользователя') %>
-<h1>Регистрация </h1>
+<h2>Регистрация </h2>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for @user, :html => {:autocomplete => "off"} do |f| %>
  <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true %>
+      <%= f.label 'Имя' %> 
+      
+      <%= f.text_field :name, autofocus: true, placeholder: "Имя будет отображаться при переписке" %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label 'Почтовый адрес' %>
+      <%= f.text_field :email, placeholder: "Можно не указывать настоящий =P" %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label 'Пароль' %>
+      <%= f.password_field :password, placeholder: "6 символов" %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.label 'Еще раз пароль' %>
+      <%= f.password_field :password_confirmation, placeholder: "Здесь могла быть ваша реклама"%>
+
+      <%= f.submit "Готово", class: "btn btn-large btn-primary" %>
     <% end %>
 
    

@@ -1,7 +1,7 @@
 include RoomsHelper
 
 class ClearOfflineUsers
- @queue = :offlineusers
+ @queue = :cleaner
 
  def self.perform
   	Activity.find_each do |a|

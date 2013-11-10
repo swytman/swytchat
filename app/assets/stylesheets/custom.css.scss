@@ -131,6 +131,11 @@ p {
 
 /* footer */
 
+
+ul.nav {max-width: 800px !important;
+width: 400px !important;
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -146,6 +151,7 @@ footer {
     float: left;
   }
   ul {
+
     float: right;
     list-style: none;
     li {
@@ -256,10 +262,6 @@ vertical-align: top
 }
 
   
-
-
-
-
 .messages {
 
  padding-top: 5px;

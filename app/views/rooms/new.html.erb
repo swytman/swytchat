@@ -1,18 +1,20 @@
 <% provide(:title, 'Sign up') %>
-<h1>Создать комнату</h1>
+
+<h2>Создать комнату</h2>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for @room, :html => {:autocomplete => "off"} do |f| %>
- <%= render 'shared/error_messages', object: f.object %>
+      
+      <%= render 'shared/error_messages', object: f.object %>
       <%= f.label :name, 'Название'%>
       <%= f.text_field :name, autofocus: true   %>
     
       <%= f.label :password, 'Пароль для входа в комнату'%>
-      <%= f.password_field :password  %>
+      <%= f.password_field :password, placeholder: "Можно и без пароля"  %>
 
-      <%= f.label :password_confirmation, "Подтверждение" %>
-      <%= f.password_field :password_confirmation  %>
+      <%= f.label :password_confirmation, "Повторите пароль" %>
+      <%= f.password_field :password_confirmation, placeholder: "Цемент недорого. 8(931) 1234567. Павел"  %>
 
       <%= f.submit "Создать комнату", class: "btn btn-large btn-primary" %>
     <% end %>

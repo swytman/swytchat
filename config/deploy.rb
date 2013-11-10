@@ -53,7 +53,7 @@ end
 
 
 # UNICORN
-namespace :unicorn donam
+namespace :unicorn do
   task :restart do
     stop
     start
@@ -78,10 +78,12 @@ namespace :nginx do
     sudo "sudo service nginx stop"
   end
 
-name :db do
+end
+
+# DB
+namespace :db do
   task :migrate do
   run_remote_rake "db:migrate"
   end
-
 end
 

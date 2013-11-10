@@ -3,73 +3,51 @@
 
 
  <script>
- last_message_id = 0;
- focused = true;
+  last_message_id = 0;
+  focused = true;
+  period = 1;
+  $(document).ready(function(){
+     room_id = <%= @room.id %>
+     get_messages();
+     get_users();
+     new_messages_check();
+     users_check();
+     oldTitle = document.title;
+     });
+  </script>
 
- period = 1;
- $(document).ready(function(){
- room_id = <%= @room.id %>
- get_messages();
- get_users();
- new_messages_check();
- users_check();
-
- oldTitle = document.title;
- 
-
-});
-</script>
-
-            <div class="row">
-            <h2>
-            <% @room.no_pass ? @class = "free" : @class = "pass" %>
-            <% @size = '21'%>
-            <%= render 'shared/lock_icon' %>
-            <% if current_user.id == @room.user_id
-            concat link_to @room.name,  {:controller => "rooms", :action =>"edit", :id => @room.id}, class: 'link_black'
+  <div class="row">
+    <h2>
+      <% @room.no_pass ? @class = "free" : @class = "pass" %>
+      <% @size = '21'%>
+      <%= render 'shared/lock_icon' %>
+        <% if current_user.id == @room.user_id
+          concat link_to @room.name,  {:controller => "rooms", :action =>"edit", :id => @room.id}, class: 'link_black'
             
-            else
+         else
             concat @room.name
-            end%>
-
-             </h2>
-            </div>
+         end%>
+    </h2>
+  </div>
 
 <div class="row">
             
-            <div class="span9">
-
-              <%= render 'shared/message_form' %>
-          
-              <%= render 'shared/attach_file' %>
-
-              <div class="history btn-group pull-center" data-toggle="buttons-radio">
-              <button class="btn btn-mini active" id="btn_day" data-toggle="button">День</button>
-              <button class="btn btn-mini" id="btn_week" data-toggle="button">Неделя</button>
-              <button class="btn btn-mini" id = "btn_month" data-toggle="button">Месяц</button>
-              <button class="btn btn-mini" id = "btn_all" data-toggle="button">Все</button>
-              </div>  
-
-              
-
-                    <ol class="messages">
-                      
-                    </ol>
-
-                  
-          </div>
-
-            <div class="span3">
-            <div id="room_info">
-              <h3>Сейчас в комнате</h3>
-
-                    <ol class="users">
-                      
-                    </ol>
-                    
-            </div>
-                
-            </div>
-
-          </div>
+    <div class="span9">
+      <%= render 'shared/message_form' %>
+      <%= render 'shared/attach_file' %>
+        <div class="history btn-group pull-center" data-toggle="buttons-radio">
+          <button class="btn btn-mini active" id="btn_day" data-toggle="button">День</button>
+          <button class="btn btn-mini" id="btn_week" data-toggle="button">Неделя</button>
+          <button class="btn btn-mini" id = "btn_month" data-toggle="button">Месяц</button>
+          <button class="btn btn-mini" id = "btn_all" data-toggle="button">Все</button>
+        </div>  
+       
+      <ol class="messages"></ol>
+    </div>
+  <div class="span3">
+    <div id="room_info">
+      <h3>Сейчас в комнате</h3>
+          <ol class="users"></ol>
+    </div>
+  </div>
 </div>
