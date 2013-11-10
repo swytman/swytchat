@@ -1,20 +1,29 @@
 class RoomsController < ApplicationController
- before_filter :signed_in_user,
-                only: [:index, :show, :new, :sendnew, :tracking]    
+ before_filter :signed_in_user
+                    
+ before_filter :only_owner,
+                only: [:edit, :destroy, :update]
+
+def destroy
+   @room = Room.find(params[:id])
+   @room.destroy
+   if @room.save
+    flash[:success] = "Комната удалена"
+    redirect_to rooms_path
+   else
+    flash[:error] = "Неудача"
+    render 'edit'
+    end
+
+end
 
   
 def edit
+
   @room = Room.find(params[:id])
 end
 
 def update
-
-  @room = current_user.rooms.find_by_id(params[:id])
-    if @room.nil? #only author can edit a room
-     flash[:error] = "Нет прав"
-     return redirect_to root_path
-    end
-
 
 if params[:chpass] #was password changed?
   @room.remember_token = create_remember_token
@@ -61,11 +70,11 @@ end
     @room = Room.find(params[:id])
     @attachfile = @room.attach_file.build
 
-        if !@room.no_pass then
-          if !check_room_token (@room) then
+        
+          if !check_room_token(@room.id) then
             redirect_to password_request_room_path(@room)
            end
-        end
+        
 
         session[:room_id] = @room.id
        @messages = @room.messages
@@ -87,9 +96,15 @@ end
 
 def sendnew
 
- @date_from = date_from (params[:period])
+ @date_from = date_from(params[:period])
+ 
+ if !check_room_token(params[:room_id].to_i) then 
+  render :json=> "Доступ запрещен"
+  return
+ end 
+
   @messages = Message.where("room_id = ? AND id > ? AND created_at >= ?",
-   params[:id], params[:last_message_id], @date_from)
+   params[:room_id], params[:last_message_id], @date_from)
       
   respond_to do |format|
       format.json { 

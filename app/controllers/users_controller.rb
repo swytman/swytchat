@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
  
 before_filter :signed_in_user,
-                only: [:index] 
+                only: [:index, :show, :edit] 
 def new
  @user = User.new
 end

@@ -5,8 +5,6 @@ def active_users
 	
 	create_or_update_time current_user.id, params[:room_id]
 	
-	#@@slogger.info ("Activities::active_users request 
-	 	#room_id=#{params[:id]}, by user_id=#{current_user.id}")
 	@activity = Activity.where("room_id = ?", params[:room_id])
 		respond_to do |format|
    		   format.json { 

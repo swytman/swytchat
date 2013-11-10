@@ -11,6 +11,7 @@
 #  salt            :string(255)
 #  remember_token  :string(255)
 #  users           :text
+#  user_id         :integer
 #
 
 require 'spec_helper'
